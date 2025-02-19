@@ -1,0 +1,20 @@
+[build]
+target = "wasm32-unknown-unknown"
+
+[target.wasm32-unknown-unknown]
+rustflags = [
+    "-C", "link-arg=--initial-memory=67108864",
+    "-C", "link-arg=--max-memory=67108864",
+]
+
+[target.aarch64-apple-darwin]
+rustflags = [
+"-C", "link-arg=-undefined",
+"-C", "link-arg=dynamic_lookup",
+]
+
+[target.x86_64-apple-darwin]
+rustflags = [
+"-C", "link-arg=-undefined",
+"-C", "link-arg=dynamic_lookup",
+]
